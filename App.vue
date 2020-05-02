@@ -13,7 +13,7 @@
           <text class="button-text">のびる</text>
       </touchable-opacity>
       <touchable-opacity class="button" :on-press="rmTodo">
-          <text class="button-text">ちちむ</text>
+          <text class="button-text">ちぢむ</text>
       </touchable-opacity>
     </view>
 </template>
