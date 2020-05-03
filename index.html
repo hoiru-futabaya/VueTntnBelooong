@@ -20,8 +20,8 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
 <script>
     new Vue {
+       el: .container
        data: function() {
-         el: .container
          messageText: '｜',
          messages: ['｜']
     },
@@ -49,7 +49,6 @@
   border-radius : 8%;          /* 角丸       */
   font-size     : 14pt;        /* 文字サイズ */
   text-align    : center;      /* 文字位置   */
-  cursor        : pointer;     /* カーソル   */
   padding       : 12px 12px;   /* 余白       */
   background    : #ff7f7f;     /* 背景色     */
   color         : #ffffff;     /* 文字色     */
