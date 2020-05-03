@@ -1,21 +1,42 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <base target="_top">
-  </head>
-  <body>
-    <component></component>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+<body>
+   <div class="container">
+      <p>お</p>
+      <p>ち</p>
+      <p>ん</p>
+      <p>ち</p>
+      <p>ん</p>
+      <p>び</p>
+      <p>ろ</p>
+      <p v-for="(message, index) in messages" :key="index">{{message}}</p>
+      <p>ん</p>
+      <a class="button" :on-press="addTodo">
+          <p class="button-text">のびる</p>
+      </a>
+      <a class="button" :on-press="rmTodo">
+          <p class="button-text">ちぢむ</p>
+      </a>
+    </div>
+</body>
 <script>
-import component from 'App.vue'
-
-export default { 
-  components: { 
-    component
-  }, 
+    new Vue {
+       data: function() {
+         return {
+           messageText: '｜',
+           messages: ['｜']
+       }
+    },
+        methods: {
+          addTodo: function() {
+          this.messages.push(this.messageText)
+            },
+          rmTodo: function() {
+          this.messages.splice(1, 1)
+            }
+          },
+        }
 </script>
 
-<style>
+<style type="text/css">
 .container {
   background-color: white;
   flex: 1;
@@ -24,12 +45,21 @@ export default {
 }
 
 .button {
-  background-color: pink;
-  padding: 10px;
-  border-radius: 5;
-  justify-content: center;
-  align-items: center;
-  }
+  display       : inline-block;
+  border-radius : 8%;          /* 角丸       */
+  font-size     : 14pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 18px 12px;   /* 余白       */
+  background    : #ff7f7f;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 4px 4px 3px #666666;  /* 影の設定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+
 
 .main {
   flex: 1;
@@ -37,5 +67,3 @@ export default {
   align-items: center;
 }
 </style>
-  </body>
-</html>
